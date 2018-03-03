@@ -10,20 +10,20 @@ This project will allow users to visit our site and get a personalized list of a
 
 Configuration settings can be found in the app.config for the console application and the Sitecore web application. Check these values and change them for your environment:
 
--Change the guid to match the one in your xConnect Service app.config.
+- Change the guid to match the one in your xConnect Service app.config.
 
         <add key="xConnectCertificateConnectionString" value="StoreName=My;StoreLocation=LocalMachine;FindType=FindByThumbprint;FindValue=3DE93B08A1C99FDC874B5A035EF02C66F3CB77E0" />
 
--Change this root path to match the root of your xConnect Service
+- Change this root path to match the root of your xConnect Service
         
 <add key="xConnectRootUrl" value="https://xp0.xconnect" />
 
--These two stay the same for the demo however if you want to work with your Slack then you would need to register for api and then put in your oauth and channel name:
+- These two stay the same for the demo however if you want to work with your Slack then you would need to register for api and then put in your oauth and channel name:
 
         <add key="SlackOAuthToken" value="xoxp-323366903376-323999081732-323928621059-c1a9b65a4714421b2c9655852e26a440" />
         <add key="SlackChannelName" value="C9J451PC5" />
 
--These need to match the lists in your sitecore instance.  The package would create them but if you manually create them the guids will be different.
+- These need to match the lists in your sitecore instance.  The package would create them but if you manually create them the guids will be different.
 
         <add key="CommerceContactList" value="38e9c0b0-ed57-49c6-9714-79f1b09159c2" />
         <add key="PowershellContactList" value="d2c719e6-d9ac-42ef-e2b6-263137430fe0"/>
