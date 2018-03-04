@@ -174,7 +174,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="favicon.ico" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Views\Search\SlackSearchView.cshtml" />
     <None Include="Views\Web.config">
