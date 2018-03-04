@@ -1,4 +1,4 @@
-![Hackathon Logo](documentation/images/hackathon.png?raw=true "Hackathon Logo")
+![Hackathon Logo](images/hackathon.png?raw=true "Hackathon Logo")
 
 # Poutineers Project
 ## Purpose
