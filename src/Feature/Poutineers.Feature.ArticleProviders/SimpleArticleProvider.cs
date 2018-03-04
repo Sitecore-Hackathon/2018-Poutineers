@@ -7,6 +7,7 @@
  *
  ********************************************************************************/
 
+using Poutineers.Feature.Search.Helpers;
 using Poutineers.Feature.XConnect;
 using Poutineers.Foundation.ArticleProviders;
 using Sitecore.XConnect;
@@ -14,6 +15,7 @@ using Sitecore.XConnect.Client;
 using Sitecore.XConnect.Collection.Model;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Poutineers.Feature.ArticleProviders
 {
@@ -34,9 +36,8 @@ namespace Poutineers.Feature.ArticleProviders
         /// <param name="id">The actual identifier</param>
         /// <returns></returns>
         /// <remarks>The simple provider only returns 1 link per category.</remarks>
-        public List<string> GetArticles(string idType, string id)
+        public List<SearchHelper.SearchResult> GetArticles(string idType, string id)
         {
-            List<string> articleList = new List<string>();
             var xConnectManager = new XConnectManager
             {
                 Client = Client
@@ -51,32 +52,28 @@ namespace Poutineers.Feature.ArticleProviders
                     foreach(var list in contact.ListSubscriptions().Subscriptions)
                     {
                         // TO DO: Dynamically load the list from list manager
-
-                        switch(list.ListDefinitionId.ToString().ToUpperInvariant())
+                        SearchHelper.SearchResults searchResults = new SearchHelper.SearchResults();
+                        switch (list.ListDefinitionId.ToString().ToUpperInvariant())
                         {
                             // CommerceContactList
                             case "38E9C0B0-ED57-49C6-9714-79F1B09159C2":
-
-                                // TO DO: These articles would come from search
-                                articleList.Add("https://www.sitecore.com/products/sitecore-commerce");
+                                searchResults = SearchHelper.DoSearch("commerce, sitecore commerce, commerce server");
                                 break;
                             // PowershellContactList
                             case "D2C719E6-D9AC-42EF-E2B6-263137430FE0":
-
-                                // TO DO: These articles would come from search
-                                articleList.Add("http://blog.najmanowicz.com/sitecore-powershell-console/");
+                                searchResults = SearchHelper.DoSearch("powershell, spe, sitecore powershell");
                                 break;
                             // WffmList
                             case "1314234D-4785-4D8C-C9A3-0AF2045B3184":
-
-                                // TO DO: These articles would come from search
                                 break;
                         }
+
+                        return searchResults.Results;
                     }
                 }
             }
 
-            return articleList;
+            return new List<SearchHelper.SearchResult>();
         }
     }
 }

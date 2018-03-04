@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Foundation\Poutineers.Foundation.ArticleProviders\Poutineers.Foundation.ArticleProviders.csproj" />
+    <ProjectReference Include="..\Poutineers.Feature.Search\Poutineers.Feature.Search.csproj" />
     <ProjectReference Include="..\Poutineers.Feature.XConnect\Poutineers.Feature.XConnect.csproj" />
   </ItemGroup>
 

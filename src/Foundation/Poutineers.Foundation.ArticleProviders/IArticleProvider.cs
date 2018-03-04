@@ -7,6 +7,7 @@
  *
  ********************************************************************************/
 
+using Poutineers.Feature.Search.Helpers;
 using System.Collections.Generic;
 
 namespace Poutineers.Foundation.ArticleProviders
@@ -22,6 +23,6 @@ namespace Poutineers.Foundation.ArticleProviders
         /// <param name="idType">Type of ID (for now only support slack_alias</param>
         /// <param name="id">The Id</param>
         /// <returns></returns>
-        List<string> GetArticles(string idType, string id);
+        List<SearchHelper.SearchResult> GetArticles(string idType, string id);
     }
 }

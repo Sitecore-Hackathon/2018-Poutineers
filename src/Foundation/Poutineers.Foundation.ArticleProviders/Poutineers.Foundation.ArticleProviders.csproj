@@ -4,4 +4,8 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Feature\Poutineers.Feature.Search\Poutineers.Feature.Search.csproj" />
+  </ItemGroup>
+
 </Project>

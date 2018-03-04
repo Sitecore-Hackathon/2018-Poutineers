@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Poutineers.Feature.Search.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,6 @@ namespace PoutineersWebsite.Models
         /// <summary>
         /// List of articles
         /// </summary>
-        public List<string> ArticleList { get; set; }
+        public List<SearchHelper.SearchResult> ArticleList { get; set; }
     }
 }
