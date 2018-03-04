@@ -10,7 +10,10 @@ This project will allow users to visit our site and get a personalized list of a
 ### Installing the Sitecore Package
 1. Clone the repo
 2. Open the solution in Visual studio 
-3. Build and puplish to your environment
+3. Build and deploy the highlighted items below to your environment
+
+
+
 
 ### Configuration Files
 
