@@ -6,6 +6,15 @@
 This project will allow users to visit our site and get a personalized list of articles based on the slack messages they have posted in our slack channel.
 
 ## Installation
+
+### Installing the Sitecore Package
+1. Clone the repo
+2. Open the solution in Visual studio 
+3. Build and deploy the highlighted items below to your environment
+
+
+
+
 ### Configuration Files
 
 Configuration settings can be found in the app.config for the console application and the Sitecore web application. Check these values and change them for your environment:
@@ -27,10 +36,13 @@ Configuration settings can be found in the app.config for the console applicatio
 
         <add key="CommerceContactList" value="38e9c0b0-ed57-49c6-9714-79f1b09159c2" />
         <add key="PowershellContactList" value="d2c719e6-d9ac-42ef-e2b6-263137430fe0"/>
+        
+### Adding A SOLR Core
+You will need to create a SOLR core. The following URL can be used to do this: https://solr-dev.local:8983/solr/admin/cores?action=CREATE&name=Posts_Core&instanceDir=Posts_Core&configSet=sitecore_configs
 
-## Installing the Sitecore Package
+Note you may need to change hostname for your envirnment (solr-dev.local:8983) 
 
-How it works
+## How it works
 
 1. A console application starts up, connects to xDB via xConnect.
 2. The end user writes a message on slack.
@@ -53,14 +65,18 @@ More advanced providers can use these interactions to learn which articles are b
 
 The initial project has 2 spots where providers are loaded via reflection so you can continuously improve the provider in a few ways:
 
-Article Providers determine which articles get returned. The simple article provider looks at the list and uses the list name to search for articles.  However additional providers can be created to watch other interactions and use those to improve accuracy. Additional contact information could be pulled in such as twitter interactions crm data and the more data used the provider could apply it.
-The console application uses a simple list determination provider. This on looks for specific keywords and uses their existence to determine the list.  Additional providers could use natural language processing to determine relevance.
+- Article Providers determine which articles get returned. The simple article provider looks at the list and uses the list name to search for articles.  However additional providers can be created to watch other interactions and use those to improve accuracy. 
+
+- Additional contact information could be pulled in such as twitter interactions crm data and the more data used the provider could apply it.
+
+- The console application uses a simple list determination provider. This on looks for specific keywords and uses their existence to determine the list.  Additional providers could use natural language processing to determine relevance.
 
 ## Executables
 
 PoutineersWebsite: This is the Sitecore 9 website that will consist of 2 views. The first is a form where you enter your slack id. The second is a page with a list of articles based on your slack id.  There will be a refresh button so you can get an update on your article list.
 
 PoutineersSlackToXConnectConsole: This console application will connect to the poutineers slack and get any messages from the Random channel.
+
 It will add any slack users as contacts and add the contacts to the proper lists based on the list determination provider.
 
 
