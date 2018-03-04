@@ -1,0 +1,25 @@
+﻿@model PoutineersWebsite.Models.SlackSearchViewModel
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>Slacks</h2>
+
+
+@using (Html.BeginRouteForm(Sitecore.Mvc.Configuration.MvcSettings.SitecoreRouteName, FormMethod.Post))
+{
+<div class="form-horizontal">
+    <h4>SlackSearchViewModel</h4>
+    <hr />
+    @Html.Sitecore().FormHandler("Search", "SlackSearch")
+    @Html.LabelFor(x => x.SlackId)
+    @Html.EditorFor(x => x.SlackId)
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" />
+        </div>
+    </div>
+</div>
+}

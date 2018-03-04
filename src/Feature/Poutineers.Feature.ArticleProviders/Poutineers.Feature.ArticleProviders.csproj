@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>The Poutineers</Authors>
+    <Company>The Poutineers</Company>
+    <Product>Poutine for the world</Product>
+    <Description>This project contains a simple article provider.  Additional providers can be loaded via reflection as needed.</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Foundation\Poutineers.Foundation.ArticleProviders\Poutineers.Foundation.ArticleProviders.csproj" />
+    <ProjectReference Include="..\Poutineers.Feature.XConnect\Poutineers.Feature.XConnect.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Sitecore.XConnect">
+      <HintPath>..\..\..\lib\Sitecore.XConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XConnect.Client">
+      <HintPath>..\..\..\lib\Sitecore.XConnect.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XConnect.Collection.Model">
+      <HintPath>..\..\..\lib\Sitecore.XConnect.Collection.Model.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
