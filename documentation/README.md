@@ -11,8 +11,8 @@ This project will allow users to visit our site and get a personalized list of a
 1. Clone the repo
 2. Open the solution in Visual studio 
 3. Build and deploy the highlighted items below to your environment
-
-
+![Deployment](images/deloy-image.jpg?raw=true "Deployment")
+ 
 
 
 ### Configuration Files
